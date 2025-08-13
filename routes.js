@@ -29,8 +29,11 @@ routes.get('/view-allBooks' , bookController.getAllBooksController)
 routes.get('/view-Book/:id' , bookController.getABookController)
 
 //path to add review
-routes.post('/add-review' , jwt , reviewController.addReviewController)
+routes.post('/add-review/:bookId' , jwt , reviewController.addReviewController)
 
+
+//path to get review for a perticular book
+routes.get('/view-review/:id' , reviewController.getBookReviewController)
 
 
 module.exports = routes
